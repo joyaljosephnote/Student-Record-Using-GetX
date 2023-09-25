@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:student_get_x/constants/colors.dart';
 import 'package:student_get_x/constants/style.dart';
 import 'package:student_get_x/models/student_model.dart';
@@ -12,13 +13,7 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                StudentAddAndEdit(action: ActionType.edit, model: studentModel),
-          ),
-        );
+        Get.to(StudentAddAndEdit(action: ActionType.edit, model: studentModel));
         setData(studentModel);
       },
       child: Card(
